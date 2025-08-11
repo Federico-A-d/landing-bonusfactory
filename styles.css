@@ -1,0 +1,178 @@
+/* Reset minimale e base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container principale */
+main {
+  max-width: 900px;
+  margin: 50px auto 80px;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+main:hover {
+  box-shadow: 0 12px 40px rgb(0 0 0 / 0.15);
+}
+
+/* Header */
+header {
+  text-align: center;
+  background: #004085;
+  color: white;
+  padding: 60px 20px 50px;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 5px 20px rgb(0 64 133 / 0.4);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+header p {
+  margin-top: 15px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Titoli principali */
+h2 {
+  color: #004085;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2.25rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Pulsante CTA */
+.btn-cta {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 12px rgb(0 123 255 / 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 40px;
+  user-select: none;
+}
+
+.btn-cta:hover,
+.btn-cta:focus {
+  background-color: #0056b3;
+  box-shadow: 0 8px 18px rgb(0 86 179 / 0.6);
+  outline: none;
+}
+
+/* FAQ Section */
+.faq {
+  margin-top: 50px;
+}
+
+/* Dettagli FAQ */
+details {
+  background-color: #fefefe;
+  border: 2px solid #e2e6ea;
+  border-radius: 12px;
+  padding: 18px 28px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.03);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+details[open] {
+  border-color: #007bff;
+  background-color: #e6f0ff;
+  box-shadow: 0 6px 18px rgb(0 123 255 / 0.3);
+}
+
+summary {
+  font-weight: 700;
+  font-size: 1.15rem;
+  list-style: none;
+  outline: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+/* Nascondi il marker di default */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icona personalizzata +/– */
+summary::before {
+  content: "➕";
+  color: #007bff;
+  font-weight: 900;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, content 0.3s ease;
+  display: inline-block;
+  width: 24px;
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+}
+
+details[open] summary::before {
+  content: "➖";
+  transform: rotate(90deg);
+}
+
+/* Contenuto FAQ */
+details p {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  user-select: text;
+  padding-left: 36px; /* per allineare col testo summary */
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  main {
+    padding: 30px 20px;
+    margin: 30px 10px 60px;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  details p {
+    padding-left: 24px;
+  }
+}
