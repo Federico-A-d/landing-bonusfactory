@@ -3,61 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Consulenze Bonus Benvenuto</title>
+  <meta name="description" content="Prenota una consulenza gratuita serale per massimizzare i bonus benvenuto in modo sicuro e professionale." />
+  <meta name="keywords" content="consulenze bonus, bonus benvenuto, consulenza gratuita, Bonus Factory" />
+  <title>Consulenze Gratuite Serali - Bonus Factory</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <style>
     /* Reset minimale */
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #f4f7fa;
       color: #333;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Header con logo */
+    /* Header con logo e hero */
     header {
       text-align: center;
-      background: #004085;
+      background: linear-gradient(135deg, #004085, #007bff);
       color: white;
-      padding: 30px 20px;
-      border-radius: 0 0 25px 25px;
-      box-shadow: 0 5px 20px rgb(0 64 133 / 0.4);
+      padding: 60px 20px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 10px 30px rgba(0, 64, 133, 0.3);
     }
     header img {
-      max-width: 160px;
-      display: block;
-      margin: 0 auto 15px;
+      max-width: 180px;
+      margin-bottom: 20px;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.4rem;
-      letter-spacing: 1px;
+      font-size: 2.8rem;
       font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 1.2px;
     }
     header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      font-style: italic;
-      opacity: 0.9;
+      font-size: 1.3rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     /* Container centrale */
     main {
-      max-width: 900px;
-      margin: 40px auto 80px;
-      background: #fff;
-      padding: 40px 50px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgb(0 0 0 / 0.1);
-      transition: box-shadow 0.3s ease;
+      max-width: 1000px;
+      margin: 50px auto 100px;
+      padding: 0 20px;
     }
-    main:hover {
-      box-shadow: 0 12px 40px rgb(0 0 0 / 0.15);
+
+    /* Sezioni */
+    section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Titoli sezioni */
+    h2 {
+      color: #004085;
+      font-weight: 700;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     /* Pulsanti CTA */
@@ -65,65 +86,103 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
+      gap: 20px;
+      margin-top: 20px;
     }
     .btn-cta {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: #007bff;
       color: white;
-      padding: 15px 35px;
+      padding: 16px 40px;
       border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
+      font-weight: 500;
       font-size: 1.1rem;
-      box-shadow: 0 6px 12px rgb(0 123 255 / 0.4);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     }
     .btn-cta:hover,
     .btn-cta:focus {
-      background-color: #0056b3;
-      box-shadow: 0 8px 18px rgb(0 86 179 / 0.6);
+      background: #0056b3;
+      box-shadow: 0 8px 20px rgba(0, 86, 179, 0.5);
+      transform: translateY(-2px);
       outline: none;
     }
 
-    /* Titoli sezioni */
-    h2 {
-      color: #004085;
-      margin-bottom: 30px;
-      font-weight: 700;
-      font-size: 2rem;
+    /* Sezione Benefici */
+    .benefits ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .benefits li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .benefits i {
+      color: #007bff;
+      font-size: 1.8rem;
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    /* Sezione Testimonial */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .testimonial {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
       text-align: center;
+      font-style: italic;
+      color: #666;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: 500;
+      color: #004085;
     }
 
     /* FAQ migliorate */
     .faq-item {
-      border: 2px solid #e2e6ea;
+      border: 1px solid #e9ecef;
       border-radius: 12px;
       margin-bottom: 15px;
       overflow: hidden;
       background: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .faq-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 20px;
+      padding: 20px;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 500;
+      font-size: 1.15rem;
       color: #004085;
+      transition: background 0.3s ease;
     }
     .faq-header:hover {
-      background: #f8f9fa;
+      background: #f1f8ff;
     }
     .faq-icon {
-      font-size: 1.5rem;
-      transition: transform 0.3s ease;
       color: #007bff;
+      transition: transform 0.3s ease;
     }
     .faq-content {
       max-height: 0;
@@ -131,43 +190,96 @@
       transition: max-height 0.4s ease, padding 0.3s ease;
       padding: 0 20px;
       color: #555;
+      font-size: 1rem;
     }
     .faq-item.active {
       border-color: #007bff;
-      box-shadow: 0 6px 18px rgba(0,123,255,0.15);
+      box-shadow: 0 6px 18px rgba(0,123,255,0.1);
     }
     .faq-item.active .faq-content {
-      padding: 15px 20px;
+      padding: 20px;
     }
     .faq-item.active .faq-icon {
-      transform: rotate(45deg);
+      transform: rotate(180deg);
     }
 
+    /* Footer */
     footer {
-      background-color: #004085;
+      background: linear-gradient(135deg, #004085, #007bff);
       color: white;
-      padding: 15px;
+      padding: 20px;
       text-align: center;
-      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries per Responsività */
+    @media (max-width: 768px) {
+      header {
+        padding: 40px 15px;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 30px 20px;
+      }
+      .cta {
+        flex-direction: column;
+      }
+      .benefits ul {
+        grid-template-columns: 1fr;
+      }
+      .testimonials {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 </head>
 <body>
 
 <header>
   <img src="logo.png" alt="Logo Bonus Factory" />
   <h1>Consulenze Gratuite Serali</h1>
-  <p>Ogni sera (esclusa la domenica) offriamo 2 posti per una consulenza di 30 minuti</p>
+  <p>Ogni sera (esclusa la domenica), riserva uno dei 2 posti disponibili per una consulenza personalizzata di 30 minuti. Scopri come massimizzare i bonus benvenuto in modo sicuro e efficace!</p>
 </header>
 
 <main>
   <section class="prenotazione">
-    <h2>Prenota Subito la Tua Consulenza</h2>
+    <h2>Prenota Ora la Tua Consulenza Gratuita</h2>
+    <p style="text-align: center; margin-bottom: 20px; color: #555;">Non perdere l'opportunità: guida esperta, zero costi, risultati immediati.</p>
     <div class="cta">
-      <button id="calendly-button" class="btn-cta">📅 Prenota con Calendly</button>
-      <a href="https://t.me/Ravaa00" target="_blank" class="btn-cta">💬 @Ravaa00</a>
-      <a href="https://t.me/Federiko7" target="_blank" class="btn-cta">💬 @Federiko7</a>
+      <button id="calendly-button" class="btn-cta"><i class="far fa-calendar-alt"></i> Prenota con Calendly</button>
+      <a href="https://t.me/Ravaa00" target="_blank" class="btn-cta"><i class="fab fa-telegram-plane"></i> Contatta @Ravaa00</a>
+      <a href="https://t.me/Federiko7" target="_blank" class="btn-cta"><i class="fab fa-telegram-plane"></i> Contatta @Federiko7</a>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <h2>Perché Sceglierci?</h2>
+    <ul>
+      <li><i class="fas fa-check-circle"></i> Guida esperta e personalizzata sui bonus benvenuto</li>
+      <li><i class="fas fa-shield-alt"></i> Metodi sicuri, verificati e conformi alle normative</li>
+      <li><i class="fas fa-clock"></i> Consulenza rapida: solo 30 minuti per risultati concreti</li>
+      <li><i class="fas fa-euro-sign"></i> Massimizza i tuoi guadagni senza rischi inutili</li>
+      <li><i class="fas fa-user-friends"></i> Supporto dedicato da professionisti del settore</li>
+    </ul>
+  </section>
+
+  <section class="testimonials">
+    <h2>Cosa Dicono i Nostri Clienti</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        "Grazie alla consulenza, ho ottenuto bonus che non conoscevo. Servizio impeccabile e gratuito!"
+        <cite>- Marco R.</cite>
+      </div>
+      <div class="testimonial">
+        "Professionale e chiaro. In 30 minuti ho capito tutto sui bonus benvenuto. Consigliatissimo!"
+        <cite>- Anna S.</cite>
+      </div>
+      <div class="testimonial">
+        "Ottimo supporto via Telegram. Hanno risolto tutti i miei dubbi in modo rapido e sicuro."
+        <cite>- Luca T.</cite>
+      </div>
     </div>
   </section>
 
@@ -177,36 +289,70 @@
     <div class="faq-item">
       <div class="faq-header">
         Come funziona il servizio di consulenza?
-        <span class="faq-icon">+</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
       </div>
       <div class="faq-content">
-        Ti guideremo passo passo durante una videochiamata per spiegarti come ottenere i bonus benvenuto in modo sicuro.
+        Ti guideremo passo passo durante una videochiamata per spiegarti come ottenere i bonus benvenuto in modo sicuro e ottimizzato.
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-header">
         Qual è il costo della consulenza?
-        <span class="faq-icon">+</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
       </div>
       <div class="faq-content">
-        La consulenza è completamente gratuita.
+        La consulenza è completamente gratuita, senza obblighi o costi nascosti.
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-header">
         Come posso contattarvi?
-        <span class="faq-icon">+</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
       </div>
       <div class="faq-content">
-        Puoi scriverci su Telegram oppure prenotare direttamente tramite Calendly.
+        Puoi scriverci su Telegram ai contatti indicati o prenotare direttamente tramite Calendly per un appuntamento serale.
       </div>
     </div>
 
     <div class="faq-item">
       <div class="faq-header">
-        Quanto tempo dura una consulenz
+        Quanto tempo dura una consulenza tipica?
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-content">
+        Ogni sessione dura circa 30 minuti, sufficienti per coprire tutti i dettagli essenziali.
+      </div>
+    </div>
 
+  </section>
+</main>
+
+<footer>
+  © 2025 Bonus Factory - Tutti i diritti riservati
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+  document.getElementById("calendly-button").addEventListener("click", function () {
+    Calendly.initPopupWidget({
+      url: "https://calendly.com/dugo-fede/30min",
+    });
+    return false;
+  });
+
+  // FAQ Toggle
+  document.querySelectorAll(".faq-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const isActive = item.classList.toggle("active");
+      const content = item.querySelector(".faq-content");
+      content.style.maxHeight = isActive ? content.scrollHeight + "px" : 0;
+    });
+  });
+</script>
+</body>
+</html>
 
 
