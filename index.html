@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulenze Bonus Benvenuto</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ddd;
+    }
+    header img {
+      max-width: 150px;
+    }
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero h1 {
+      font-size: 2.2rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #444;
+    }
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .cta a, .cta button {
+      background-color: #d32f2f;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta a:hover, .cta button:hover {
+      background-color: #a51e1e;
+    }
+    .info {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .faq {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    .faq h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2e7d32;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h3 {
+      color: #d32f2f;
+      margin-bottom: 8px;
+    }
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+  <!-- Calendly CSS -->
+  <link
+    href="https://assets.calendly.com/assets/external/widget.css"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo Bonus Factory" />
+</header>
+
+<section class="hero">
+  <h1>Consulenze Gratuite Serali</h1>
+  <p>
+    Ogni sera (esclusa la domenica) mettiamo a disposizione <strong>2 posti</strong> per una consulenza gratuita e personalizzata su come
+    sbloccare i migliori bonus benvenuto in modo sicuro e veloce.
+  </p>
+  <div class="cta">
+    <button id="calendly-button">📅 Prenota con Calendly</button>
+    <a href="https://t.me/Ravaa00" target="_blank">📩 Contatta @Ravaa00</a>
+    <a href="https://t.me/Federiko7" target="_blank">📩 Contatta @Federiko7</a>
+  </div>
+</section>
+
+<section class="info">
+  <h2>Come funziona</h2>
+  <p>
+    In una chiamata serale di circa 30 minuti ti guideremo passo passo, spiegandoti le strategie migliori per sbloccare i bonus
+    benvenuto delle piattaforme. Non serve esperienza: ti mostreremo tutto, così potrai iniziare subito a guadagnare senza errori.
+  </p>
+</section>
+
+<section class="faq">
+  <h2>Domande Frequenti (FAQ)</h2>
+  <div class="faq-item">
+    <h3>💬 Quanto dura la consulenza?</h3>
+    <p>Circa 30 minuti, ma restiamo disponibili per eventuali chiarimenti anche dopo.</p>
+  </div>
+  <div class="faq-item">
+    <h3>💬 È davvero gratuita?</h3>
+    <p>Sì, non chiediamo alcun pagamento. La nostra missione è aiutarti a partire con il piede giusto.</p>
+  </div>
+  <div class="faq-item">
+    <h3>💬 Serve esperienza?</h3>
+    <p>No, ti guidiamo in ogni passaggio, anche se sei completamente nuovo.</p>
+  </div>
+  <div class="faq-item">
+    <h3>💬 Posso prenotare in anticipo?</h3>
+    <p>Sì, ti basta scriverci su Telegram o usare il pulsante Calendly per scegliere la data disponibile.</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Bonus Factory - Tutti i diritti riservati
+</footer>
+
+<!-- Calendly script -->
+<script
+  src="https://assets.calendly.com/assets/external/widget.js"
+  type="text/javascript"
+  async
+></script>
+<script type="text/javascript">
+  document
+    .getElementById("calendly-button")
+    .addEventListener("click", function () {
+      Calendly.initPopupWidget({
+        url: "https://calendly.com/dugo-fede/30min",
+      });
+      return false;
+    });
+</script>
+</body>
+</html>
+
+
+
