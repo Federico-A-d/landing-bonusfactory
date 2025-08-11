@@ -2,170 +2,171 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Landing Consulenza</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulenze Bonus Benvenuto</title>
   <style>
-    /* Stile generale pagina */
+    :root {
+      --primary-color: #0056b3; /* Blu dal logo */
+      --secondary-color: #ffcc00; /* Giallo dal logo */
+      --text-color: #222;
+      --bg-light: #f8f9fa;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f7fa;
       margin: 0;
-      padding: 0 20px;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
     }
 
     header {
+      background-color: white;
+      padding: 15px;
       text-align: center;
-      padding: 50px 20px 40px;
-      background: #007bff;
+      border-bottom: 3px solid var(--primary-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      max-width: 160px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      border-radius: 0 0 20px 20px;
-      box-shadow: 0 2px 10px rgb(0 123 255 / 0.3);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.8rem;
-      letter-spacing: 1.2px;
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
     }
 
-    main {
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .cta a, .cta button {
+      background-color: white;
+      color: var(--primary-color);
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cta a:hover, .cta button:hover {
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+
+    .info {
       max-width: 900px;
-      margin: 40px auto 80px;
-      background: white;
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgb(0 0 0 / 0.05);
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
     }
 
-    /* FAQ styles */
     .faq {
-      margin-top: 40px;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
     }
 
     .faq h2 {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      color: #007bff;
+      margin-bottom: 25px;
+      color: var(--primary-color);
     }
 
-    details {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
+    .faq-item {
+      margin-bottom: 20px;
+      background: white;
+      padding: 15px;
       border-radius: 8px;
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
-    details[open] {
-      background-color: #e6f7ff;
-      border-color: #91d5ff;
+    .faq-item h3 {
+      color: var(--primary-color);
+      margin-bottom: 8px;
     }
 
-    summary {
-      font-weight: 600;
-      font-size: 1.1rem;
-      outline: none;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::before {
-      content: "➕ ";
-      font-weight: bold;
-      color: #007bff;
-      transition: transform 0.3s ease;
-      display: inline-block;
-      margin-right: 8px;
-    }
-
-    details[open] summary::before {
-      content: "➖ ";
-      transform: rotate(90deg);
-    }
-
-    details p {
-      margin-top: 10px;
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    /* Pulsante esempio */
-    .btn-cta {
-      display: inline-block;
-      background: #007bff;
+    footer {
+      background-color: var(--primary-color);
       color: white;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: background-color 0.3s ease;
-      margin-top: 30px;
+      padding: 15px;
       text-align: center;
-    }
-
-    .btn-cta:hover {
-      background-color: #0056b3;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      main {
-        padding: 20px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
+      margin-top: 40px;
     }
   </style>
+  <!-- Calendly CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>Consulenza Professionale</h1>
-    <p>Il supporto giusto per far crescere il tuo business</p>
-  </header>
+<header>
+  <img src="logo.png" alt="Logo Bonus Factory" />
+</header>
 
-  <main>
-    <section>
-      <h2>Benvenuto nella nostra landing page</h2>
-      <p>Qui potrai scoprire i nostri servizi di consulenza pensati per te. Contattaci per una valutazione gratuita e inizia a far crescere la tua attività oggi stesso.</p>
-      <a href="#faq" class="btn-cta">Scopri le FAQ</a>
-    </section>
+<section class="hero">
+  <h1>Prenota la Tua Consulenza Gratuita</h1>
+  <p>Ogni sera (esclusa la domenica) offriamo <strong>2 posti</strong> per una consulenza personalizzata di 30 minuti.</p>
+  <div class="cta">
+    <button id="calendly-button">📅 Prenota con Calendly</button>
+    <a href="https://t.me/Ravaa00" target="_blank">💬 @Ravaa00</a>
+    <a href="https://t.me/Federiko7" target="_blank">💬 @Federiko7</a>
+  </div>
+</section>
 
-    <section id="faq" class="faq">
-      <h2>Domande Frequenti</h2>
+<section class="faq">
+  <h2>Domande Frequenti</h2>
+  <div class="faq-item">
+    <h3>Come funziona il servizio di consulenza?</h3>
+    <p>Ti guideremo passo passo durante una videochiamata per spiegarti come ottenere i bonus benvenuto in modo sicuro.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Qual è il costo della consulenza?</h3>
+    <p>La consulenza è completamente gratuita.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Come posso contattarvi?</h3>
+    <p>Puoi scriverci su Telegram oppure prenotare direttamente tramite Calendly.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Quanto tempo dura una consulenza tipica?</h3>
+    <p>Circa 30 minuti.</p>
+  </div>
+</section>
 
-      <details>
-        <summary>Come funziona il servizio di consulenza?</summary>
-        <p>Offriamo un'analisi personalizzata del tuo business per individuare le migliori strategie di crescita e accompagnarti passo dopo passo nel percorso.</p>
-      </details>
+<footer>
+  © 2025 Bonus Factory - Tutti i diritti riservati
+</footer>
 
-      <details>
-        <summary>Qual è il costo della consulenza?</summary>
-        <p>I prezzi variano in base al pacchetto scelto. Puoi contattarci per un preventivo su misura e senza impegno.</p>
-      </details>
-
-      <details>
-        <summary>Come posso contattarvi?</summary>
-        <p>Puoi scriverci via email, telefono o utilizzare il modulo di contatto presente nel sito per ricevere una risposta rapida.</p>
-      </details>
-
-      <details>
-        <summary>Quanto tempo dura una consulenza tipica?</summary>
-        <p>La durata dipende dalle esigenze del cliente, solitamente da 1 a 3 mesi con incontri periodici per monitorare i progressi.</p>
-      </details>
-    </section>
-  </main>
-
+<!-- Calendly script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">
+  document.getElementById("calendly-button").addEventListener("click", function () {
+    Calendly.initPopupWidget({
+      url: "https://calendly.com/dugo-fede/30min",
+    });
+    return false;
+  });
+</script>
 </body>
 </html>
 
