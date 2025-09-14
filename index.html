@@ -9,29 +9,264 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
+    /* Reset minimale */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Roboto', sans-serif; background: #f4f7fa; color: #333; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    header { text-align: center; background: linear-gradient(135deg, #004085, #007bff); color: white; padding: 60px 20px; border-radius: 0 0 30px 30px; box-shadow: 0 10px 30px rgba(0, 64, 133, 0.3); }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header con logo e hero */
+    header {
+      text-align: center;
+      background: linear-gradient(135deg, #004085, #007bff);
+      color: white;
+      padding: 60px 20px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 10px 30px rgba(0, 64, 133, 0.3);
+    }
     header img { max-width: 180px; margin-bottom: 20px; }
     header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 1.2px; }
     header p { font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
 
+    /* Container centrale */
     main { max-width: 1000px; margin: 50px auto 100px; padding: 0 20px; }
-    section { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); margin-bottom: 40px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    section:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
-    h2 { color: #004085; font-weight: 700; font-size: 2.2rem; text-align: center; margin-bottom: 30px; }
-    .cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-    .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: #007bff; color: white; padding: 16px 40px; border-radius: 50px; font-weight: 500; font-size: 1.1rem; text-decoration: none; box-shadow: 0 6px 15px rgba(0,123,255,0.3); transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; cursor:pointer; }
-    .btn-cta:hover, .btn-cta:focus { background: #0056b3; box-shadow: 0 8px 20px rgba(0,86,179,0.5); transform: translateY(-2px); outline: none; }
-    .btn-cta:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
 
-    .benefits ul, .bonus-info ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; }
-    .benefits li, .bonus-info li { display: flex; align-items: center; gap: 15px; font-size: 1.1rem; color: #555; }
-    .benefits i, .bonus-info i { color: #007bff; font-size: 1.8rem; background: #e7f3ff; padding: 10px; border-radius: 50%; }
+    /* Sezioni generiche */
+    section {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      margin-bottom: 40px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); }
+
+    /* Titoli sezioni */
+    h2 {
+      color: #004085;
+      font-weight: 700;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Pulsanti CTA */
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #007bff;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .btn-cta:hover,
+    .btn-cta:focus {
+      background: #0056b3;
+      box-shadow: 0 8px 20px rgba(0, 86, 179, 0.5);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    /* Sezione Benefici */
+    .benefits ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .benefits li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .benefits i {
+      color: #007bff;
+      font-size: 1.8rem;
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    /* Sezione Concettuale sui Bonus */
     .bonus-info p { font-size: 1.1rem; color: #555; margin-bottom: 20px; text-align: justify; }
-    footer { background: linear-gradient(135deg, #004085, #007bff); color: white; padding: 20px; text-align: center; font-size: 0.9rem; }
+    .bonus-info ul { list-style: none; padding-left: 0; }
+    .bonus-info li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .bonus-info i {
+      color: #007bff;
+      font-size: 1.8rem;
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 50%;
+    }
 
-    @media (max-width: 768px) { header { padding: 40px 15px; } header h1 { font-size: 2.2rem; } section { padding: 30px 20px; } .cta { flex-direction: column; } .benefits ul, .bonus-info ul { grid-template-columns: 1fr; } }
+    /* === Sezione Testimonial (immagine a sinistra, recensioni a destra) === */
+    .testimonials { padding-bottom: 30px; }
+    .testimonials .testimonials-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Immagine Fiducia */
+    .fiducia-wrapper {
+      flex: 1 1 320px;
+      display: flex;
+      justify-content: center;
+    }
+    .fiducia-img {
+      display: block;
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Griglia testimonianze */
+    .testimonials-grid {
+      flex: 2 1 520px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .testimonial {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .testimonial p { margin-bottom: 10px; }
+    .testimonial .stars {
+      margin-top: 4px;
+      color: #f5c518;
+      letter-spacing: 2px;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: 600;
+      color: #004085;
+    }
+
+    /* FAQ migliorate */
+    .faq-item {
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      background: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: #004085;
+      transition: background 0.3s ease;
+    }
+    .faq-header:hover { background: #f1f8ff; }
+    .faq-icon { color: #007bff; transition: transform 0.3s ease; }
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 20px;
+      color: #555;
+      font-size: 1rem;
+    }
+    .faq-item.active { border-color: #007bff; box-shadow: 0 6px 18px rgba(0,123,255,0.1); }
+    .faq-item.active .faq-content { padding: 20px; }
+    .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #004085, #007bff);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Media Queries per Responsività */
+    @media (max-width: 768px) {
+      header { padding: 40px 15px; }
+      header h1 { font-size: 2.2rem; }
+      section { padding: 30px 20px; }
+      .cta { flex-direction: column; }
+      .benefits ul, .bonus-info ul { grid-template-columns: 1fr; }
+      .testimonials .testimonials-container { flex-direction: column; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .fiducia-img { max-width: 260px; }
+    }
+
+    /* Slot consulenza */
+    .slots {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .slot {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 220px;
+    }
+    .btn-slot {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .btn-slot.occupato {
+      background: #ccc;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
@@ -44,20 +279,28 @@
 
 <main>
   <section class="prenotazione">
-    <h2>Prenota la Tua Consulenza Gratuita</h2>
+    <h2>Prenota la tua Consulenza Gratuita</h2>
     <p style="text-align: center; margin-bottom: 20px; color: #555;">
-      Clicca su uno dei contatti per prenotare il tuo slot: una volta prenotato, il bottone si disabilita fino a mezzanotte.
+      Clicca su uno slot disponibile per contattarci su Telegram. Una volta prenotato, lo slot rimarrà bloccato per te.
     </p>
-    <div class="cta">
-      <button id="slot1" class="btn-cta"><i class="fab fa-telegram-plane"></i> Contatta @Ravaa00</button>
-      <button id="slot2" class="btn-cta"><i class="fab fa-telegram-plane"></i> Contatta @Federiko7</button>
+
+    <div class="slots">
+      <div class="slot" id="slot-rava">
+        <h3>@Ravaa00</h3>
+        <p>Consulenza individuale con Rava</p>
+        <button class="btn-slot">Prenota su Telegram</button>
+      </div>
+
+      <div class="slot" id="slot-fede">
+        <h3>@Federiko7</h3>
+        <p>Consulenza individuale con Federico</p>
+        <button class="btn-slot">Prenota su Telegram</button>
+      </div>
     </div>
   </section>
 
+  <!-- Sezione Bonus Info -->
   <section class="bonus-info">
-    <h2>Cosa Sono i Bonus Benvenuto e Come Massimizzarli</h2>
-    <p>Parliamo prima dei bonus di benvenuto bancari e crypto...</p>
- <section class="bonus-info">
     <h2>Cosa Sono i Bonus Benvenuto e Come Massimizzarli</h2>
     <p>
       Parliamo prima dei bonus di benvenuto bancari e crypto: si tratta di offerte che piattaforme affidabili come Kraken o Revolut mettono a disposizione dei nuovi utenti.
@@ -186,59 +429,11 @@
       item.classList.toggle('active');
     });
   });
-
-  </section>
-</main>
-
-<footer>
-  © 2025 Bonus Factory - Tutti i diritti riservati
-</footer>
-
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
-
-<script>
-  // Configura Firebase
-  const firebaseConfig = {
-    apiKey: "INSERISCI_LA_TUA_API_KEY",
-    authDomain: "INSERISCI_IL_TUO_AUTH_DOMAIN",
-    databaseURL: "INSERISCI_IL_TUO_DATABASE_URL",
-    projectId: "INSERISCI_IL_TUO_PROJECT_ID",
-    storageBucket: "INSERISCI_IL_TUO_STORAGE_BUCKET",
-    messagingSenderId: "INSERISCI_IL_TUO_MESSAGING_SENDER_ID",
-    appId: "INSERISCI_IL_TUO_APP_ID"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
-
-  const slots = ["slot1","slot2"];
-  const buttons = slots.map(id => document.getElementById(id));
-
-  // Ottieni la data di oggi
-  const today = new Date().toISOString().slice(0,10);
-
-  // Carica stato slot da Firebase
-  db.ref('slots/' + today).get().then(snapshot => {
-    const data = snapshot.val() || {};
-    buttons.forEach(btn => {
-      if(data[btn.id]) btn.disabled = true;
-    });
-  });
-
-  // Funzione prenotazione
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if(confirm("Sei sicuro di voler prenotare questo slot? Una volta prenotato non sarà più disponibile oggi.")) {
-        db.ref('slots/' + today + '/' + btn.id).set(true).then(() => {
-          btn.disabled = true;
-        });
-      }
-    });
-  });
 </script>
+
 </body>
 </html>
+
 
 
 
