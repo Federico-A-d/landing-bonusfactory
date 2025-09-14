@@ -9,14 +9,18 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
+    /* Reset minimale */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Roboto', sans-serif;
       background: #f4f7fa;
       color: #333;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
+    /* Header con logo e hero */
     header {
       text-align: center;
       background: linear-gradient(135deg, #004085, #007bff);
@@ -29,8 +33,10 @@
     header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 1.2px; }
     header p { font-size: 1.3rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
 
+    /* Container centrale */
     main { max-width: 1000px; margin: 50px auto 100px; padding: 0 20px; }
 
+    /* Sezioni generiche */
     section {
       background: #fff;
       padding: 40px;
@@ -41,6 +47,7 @@
     }
     section:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12); }
 
+    /* Titoli sezioni */
     h2 {
       color: #004085;
       font-weight: 700;
@@ -49,54 +56,140 @@
       margin-bottom: 30px;
     }
 
-    /* Slot consulenze */
-    .slots {
+    /* Pulsanti CTA */
+    .cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
       margin-top: 20px;
     }
-    .slot {
-      flex: 1;
-      min-width: 260px;
-      max-width: 300px;
-      padding: 25px;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-    .slot:hover { transform: translateY(-4px); }
-    .slot h3 { margin-bottom: 10px; color: #004085; }
-    .slot p { font-size: 0.95rem; color: #555; margin-bottom: 15px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #007bff;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1.1rem;
       text-decoration: none;
-      transition: background 0.2s ease;
+      box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
     }
-    .btn.libero {
-      background: #28a745;
-      color: white;
-    }
-    .btn.libero:hover { background: #218838; }
-    .btn.occupato {
-      background: #e74c3c;
-      color: white;
-      cursor: not-allowed;
-      pointer-events: none;
+    .btn-cta:hover,
+    .btn-cta:focus {
+      background: #0056b3;
+      box-shadow: 0 8px 20px rgba(0, 86, 179, 0.5);
+      transform: translateY(-2px);
+      outline: none;
     }
 
-    /* FAQ */
+    /* Sezione Benefici */
+    .benefits ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .benefits li {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .benefits i {
+      color: #007bff;
+      font-size: 1.8rem;
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    /* Sezione Concettuale sui Bonus */
+    .bonus-info p { font-size: 1.1rem; color: #555; margin-bottom: 20px; text-align: justify; }
+    .bonus-info ul { list-style: none; padding-left: 0; }
+    .bonus-info li {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .bonus-info i {
+      color: #007bff;
+      font-size: 1.8rem;
+      background: #e7f3ff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    /* === Sezione Testimonial (immagine a sinistra, recensioni a destra) === */
+    .testimonials { padding-bottom: 30px; }
+    .testimonials .testimonials-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Immagine Fiducia */
+    .fiducia-wrapper {
+      flex: 1 1 320px;
+      display: flex;
+      justify-content: center;
+    }
+    .fiducia-img {
+      display: block;
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Griglia testimonianze */
+    .testimonials-grid {
+      flex: 2 1 520px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .testimonial {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-style: italic;
+      color: #666;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .testimonial p { margin-bottom: 10px; }
+    .testimonial .stars {
+      margin-top: 4px;
+      color: #f5c518;
+      letter-spacing: 2px;
+    }
+    .testimonial cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      font-weight: 600;
+      color: #004085;
+    }
+
+    /* FAQ migliorate */
     .faq-item {
       border: 1px solid #e9ecef;
       border-radius: 12px;
       margin-bottom: 15px;
+      overflow: hidden;
       background: #fff;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .faq-header {
       display: flex;
@@ -107,17 +200,23 @@
       font-weight: 500;
       font-size: 1.15rem;
       color: #004085;
+      transition: background 0.3s ease;
     }
+    .faq-header:hover { background: #f1f8ff; }
+    .faq-icon { color: #007bff; transition: transform 0.3s ease; }
     .faq-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
+      transition: max-height 0.4s ease, padding 0.3s ease;
       padding: 0 20px;
       color: #555;
       font-size: 1rem;
     }
-    .faq-item.active .faq-content { padding: 20px; max-height: 300px; }
+    .faq-item.active { border-color: #007bff; box-shadow: 0 6px 18px rgba(0,123,255,0.1); }
+    .faq-item.active .faq-content { padding: 20px; }
+    .faq-item.active .faq-icon { transform: rotate(180deg); }
 
+    /* Footer */
     footer {
       background: linear-gradient(135deg, #004085, #007bff);
       color: white;
@@ -126,8 +225,47 @@
       font-size: 0.9rem;
     }
 
+    /* Media Queries per Responsività */
     @media (max-width: 768px) {
-      .slots { flex-direction: column; align-items: center; }
+      header { padding: 40px 15px; }
+      header h1 { font-size: 2.2rem; }
+      section { padding: 30px 20px; }
+      .cta { flex-direction: column; }
+      .benefits ul, .bonus-info ul { grid-template-columns: 1fr; }
+      .testimonials .testimonials-container { flex-direction: column; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .fiducia-img { max-width: 260px; }
+    }
+
+    /* Slot consulenza */
+    .slots {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .slot {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 220px;
+    }
+    .btn-slot {
+      margin-top: 15px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .btn-slot.occupato {
+      background: #ccc;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -141,77 +279,160 @@
 
 <main>
   <section class="prenotazione">
-    <h2>Prenota Ora la Tua Consulenza Gratuita</h2>
+    <h2>Prenota la tua Consulenza Gratuita</h2>
     <p style="text-align: center; margin-bottom: 20px; color: #555;">
-      Scegli uno dei due slot giornalieri disponibili e contattaci direttamente su Telegram.
+      Clicca su uno slot disponibile per contattarci su Telegram. Una volta prenotato, lo slot rimarrà bloccato per te.
     </p>
 
-    <div class="slots">
-      <!-- Slot Rava -->
-      <div class="slot">
+  <div class="slots">
+      <div class="slot" id="slot-rava">
         <h3>@Ravaa00</h3>
         <p>Consulenza individuale con Rava</p>
-        <!-- Se libero -->
-        <a href="https://t.me/Ravaa00" target="_blank" class="btn libero">Prenota su Telegram</a>
-        <!-- Se occupato, sostituire la riga sopra con questa -->
-        <!-- <div class="btn occupato">Slot Prenotato</div> -->
+        <button class="btn-slot">Prenota su Telegram</button>
       </div>
 
-      <!-- Slot Fede -->
-      <div class="slot">
+      <div class="slot" id="slot-fede">
         <h3>@Federiko7</h3>
-        <p>Consulenza individuale con Fede</p>
-        <!-- Se libero -->
-        <a href="https://t.me/Federiko7" target="_blank" class="btn libero">Prenota su Telegram</a>
-        <!-- Se occupato, sostituire la riga sopra con questa -->
-        <!-- <div class="btn occupato">Slot Prenotato</div> -->
+        <p>Consulenza individuale con Federico</p>
+        <button class="btn-slot">Prenota su Telegram</button>
       </div>
     </div>
   </section>
 
-  <!-- Qui restano le altre sezioni: bonus-info, benefits, testimonials, faq... (le puoi lasciare come nel tuo codice originale) -->
-  
+  <!-- Sezione Bonus Info -->
+  <section class="bonus-info">
+    <h2>Cosa Sono i Bonus Benvenuto e Come Massimizzarli</h2>
+    <p>
+      Parliamo prima dei bonus di benvenuto bancari e crypto: si tratta di offerte che piattaforme affidabili come Kraken o Revolut mettono a disposizione dei nuovi utenti.
+      In pratica, aprendo un account tramite i nostri link e completando semplici requisiti, puoi ricevere denaro o credito gratuito da utilizzare liberamente.
+      Sono occasioni concrete per avvicinarsi al mondo delle criptovalute o dei servizi finanziari digitali senza rischi.
+    </p>
+    <p>
+      Accanto a questi, i migliori airdrop di criptovalute: progetti emergenti che regalano token gratuiti per registrazione o semplici attività, come seguire canali social o scaricare app.
+      Spesso, questi token aumentano di valore nel tempo, offrendo guadagni potenziali.
+    </p>
+    <p>
+      Infine, bonus dei casinò online su piattaforme regolamentate: ricevi giri gratuiti o bonus senza deposito per divertirti e vincere senza spendere.
+    </p>
+    <p>
+      La nostra consulenza giornaliera gratuita ti aiuta a navigare questo mondo: ti mostriamo come attivare bonus, airdrop e offerte, insegnandoti gestione del rischio, diversificazione e ottimizzazione per guadagni sostenibili.
+    </p>
+    <ul>
+      <li><i class="fas fa-lightbulb" aria-hidden="true"></i> Concetto chiave: i bonus e gli airdrop non sono “denaro gratis” ma opportunità calcolate. Impara a calcolare il valore atteso (EV) per decidere se valgono il tempo investito.</li>
+      <li><i class="fas fa-chart-line" aria-hidden="true"></i> Strategie avanzate: diversifica tra piattaforme bancarie, crypto e casinò per minimizzare i rischi e massimizzare i rendimenti cumulativi.</li>
+      <li><i class="fas fa-exclamation-triangle" aria-hidden="true"></i> Evita errori comuni: comprendi i rollover, le scadenze e le restrizioni per non perdere i tuoi guadagni da bonus o airdrop.</li>
+      <li><i class="fas fa-handshake" aria-hidden="true"></i> Approccio etico: promuoviamo solo metodi legali e trasparenti, in linea con le normative italiane e UE.</li>
+    </ul>
+  </section>
+
+  <!-- Benefici -->
+  <section class="benefits">
+    <h2>Perché Sceglierci?</h2>
+    <ul>
+      <li><i class="fas fa-check-circle" aria-hidden="true"></i> Guida esperta e personalizzata su bonus benvenuto bancari, crypto, airdrop e casinò con focus su strategie concettuali</li>
+      <li><i class="fas fa-shield-alt" aria-hidden="true"></i> Metodi sicuri, verificati e conformi alle normative per un approccio responsabile</li>
+      <li><i class="fas fa-clock" aria-hidden="true"></i> Consulenza rapida: solo 30 minuti per risultati concreti e insights duraturi</li>
+      <li><i class="fas fa-euro-sign" aria-hidden="true"></i> Massimizza i tuoi guadagni senza rischi inutili, con calcoli di valore atteso</li>
+      <li><i class="fas fa-user-friends" aria-hidden="true"></i> Supporto dedicato da professionisti del settore, inclusa educazione finanziaria di base</li>
+      <li><i class="fas fa-sync-alt" aria-hidden="true"></i> Consulenze giornaliere flessibili: scegli l'orario che ti conviene durante il giorno</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Cosa Dicono i Nostri Clienti</h2>
+    <div class="testimonials-container">
+      <div class="fiducia-wrapper">
+        <img src="fiducia.png" alt="Fiducia e soddisfazione dei clienti" class="fiducia-img" loading="lazy" />
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>"Grazie alla consulenza, ho ottenuto bonus bancari e airdrop che non conoscevo e imparato strategie per il futuro. Servizio impeccabile e gratuito!"</p>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <cite>- Marco R.</cite>
+        </div>
+        <div class="testimonial">
+          <p>"Professionale e chiaro. In 30 minuti ho capito i concetti chiave sui bonus crypto e casinò. Consigliatissimo!"</p>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <cite>- Anna S.</cite>
+        </div>
+        <div class="testimonial">
+          <p>"Ottimo supporto via Telegram. Hanno risolto tutti i miei dubbi su airdrop in modo rapido, sicuro e con un approccio educativo."</p>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <cite>- Luca T.</cite>
+        </div>
+        <div class="testimonial">
+          <p>"Ho finalmente capito come utilizzare al meglio bonus e airdrop senza perdere tempo o soldi. Servizio gratuito e altamente professionale."</p>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <cite>- Francesca M.</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="faq">
     <h2>Domande Frequenti</h2>
-
     <div class="faq-item">
-      <div class="faq-header">
-        Come funziona il servizio di consulenza?
-        <i class="fas fa-chevron-down faq-icon"></i>
-      </div>
-      <div class="faq-content">
-        Ti guideremo passo passo durante una videochiamata per spiegarti come ottenere bonus benvenuto bancari, crypto, airdrop e casinò in modo sicuro e strategico.
-      </div>
+      <div class="faq-header">Quanto dura la consulenza? <span class="faq-icon">▼</span></div>
+      <div class="faq-content"><p>Ogni consulenza dura circa 30 minuti, il tempo giusto per rispondere a tutte le tue domande e mostrarti strategie pratiche.</p></div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-header">
-        Qual è il costo della consulenza?
-        <i class="fas fa-chevron-down faq-icon"></i>
-      </div>
-      <div class="faq-content">
-        La consulenza è completamente gratuita, senza obblighi o costi nascosti.
-      </div>
+      <div class="faq-header">È veramente gratuita? <span class="faq-icon">▼</span></div>
+      <div class="faq-content"><p>Sì, la consulenza è totalmente gratuita. Lo scopo è guidarti nell’uso dei bonus e degli airdrop in maniera sicura e consapevole.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-header">Come posso prenotare? <span class="faq-icon">▼</span></div>
+      <div class="faq-content"><p>Basta cliccare sul pulsante Telegram dello slot disponibile. Il sistema assicura che ogni utente possa prenotare una sola consulenza.</p></div>
     </div>
   </section>
+
 </main>
 
 <footer>
-  © 2025 Bonus Factory - Tutti i diritti riservati
+  © 2025 Bonus Factory. Tutti i diritti riservati.
 </footer>
 
 <script>
-  // FAQ Toggle
-  document.querySelectorAll(".faq-header").forEach(header => {
-    header.addEventListener("click", () => {
-      const item = header.parentElement;
-      item.classList.toggle("active");
+  // Slot prenotazione unico per utente
+  const slots = [
+    { id: 'slot-rava', link: 'https://t.me/Ravaa00' },
+    { id: 'slot-fede', link: 'https://t.me/Federiko7' }
+  ];
+
+  const prenotato = localStorage.getItem('consulenzaPrenotata');
+
+  slots.forEach(slot => {
+    const div = document.getElementById(slot.id);
+    const btn = div.querySelector('.btn-slot');
+
+    if (prenotato === 'true') {
+      btn.innerText = 'Hai già prenotato';
+      btn.disabled = true;
+      btn.classList.add('occupato');
+    } else {
+      btn.addEventListener('click', () => {
+        localStorage.setItem('consulenzaPrenotata', 'true');
+        window.open(slot.link, '_blank');
+        btn.innerText = 'Hai già prenotato';
+        btn.disabled = true;
+        btn.classList.add('occupato');
+      });
+    }
+  });
+
+  // FAQ toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const header = item.querySelector('.faq-header');
+    header.addEventListener('click', () => {
+      item.classList.toggle('active');
     });
   });
 </script>
+
 </body>
 </html>
-
 
 
 
